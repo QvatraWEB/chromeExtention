@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('_head.html',{
+"title":"Главная"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('_header.html',{})
+    <main class="page">
+      <div class="_container">
+        <div class="js-clock">
+          <h1>00:00</h1>
+        </div>
+        <form action="" class="js-form form">
+          <input type="text" placeholder="Your name?">
+        </form>
+        <h2 class="js-greetings greetings"></h2>
+        <form action="" class="js-toDo">
+          <input type="text" placeholder="Your ToDo">
+        </form>
+        <ul class="js-toDoList"></ul>
+        <span class="js-weather"></span>
+      </div>
+
+    </main>
+    @@include('_footer.html',{})
+  </div>
+  @@include('_popup.html',{})
+  @@include('_js.html',{})
+</body>
+
+</html>
