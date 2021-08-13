@@ -924,7 +924,9 @@ function getRandom() {
 /////////////////// weather
 const COORDS_LS = 'coords',
   API_KEY = '1a0118170d7e56b406ef1df59c20cb93',
-  weatherContainer = document.querySelector('.js-weather')
+  cityContainer = document.querySelector('.js-city'),
+  tempContainer = document.querySelector('.js-temp')
+
 
 function getWeather(lat, lng) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`)
@@ -932,9 +934,13 @@ function getWeather(lat, lng) {
       return response.json()
     })
     .then(function (json) {
+      let locationIcon = document.querySelector('.weather-icon')
+      const { icon } = json.weather[0]
       const temperature = json.main.temp
       const place = json.name
-      weatherContainer.innerText = `${temperature} @ ${place}`
+      cityContainer.innerText = `${place}`
+      tempContainer.innerText = `${temperature}`
+      locationIcon.innerHTML = `<img src="img/icons/${icon}.png"></img>`
     })
 }
 

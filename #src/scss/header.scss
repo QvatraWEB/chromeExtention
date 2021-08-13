@@ -1,4 +1,29 @@
 //====================================================================================================
+.header {
+  &__content {
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__search {
+    font-weight: 500;
+    line-height: 60px;
+    font-size: 60/56 * 100%;
+  }
+
+  &__weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.city {
+}
+.temp {
+}
 
 //====================================================================================================
 

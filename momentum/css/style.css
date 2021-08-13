@@ -33,7 +33,7 @@ body {
 
 body {
   line-height: 1;
-  font-family: "";
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -42,7 +42,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "";
+  font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: inherit;
 }
 
@@ -88,7 +88,7 @@ h6 {
 }
 
 body {
-  color: #000;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 body._lock {
@@ -874,6 +874,37 @@ body.ie ._ibg img {
   background: url("../img/icons/close.svg") 0 0 no-repeat;
 }
 
+.header__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__search {
+  font-weight: 500;
+  line-height: 60px;
+  font-size: 107.1428571429%;
+}
+
+.header__weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 /*
 //Burger
 .icon-menu {
@@ -958,10 +989,6 @@ body.ie ._ibg img {
   z-index: -1;
   -webkit-animation: fadein 1s linear;
           animation: fadein 1s linear;
-}
-
-._container {
-  background-color: white;
 }
 
 .page {
