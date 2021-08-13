@@ -148,7 +148,7 @@ function getWeather(lat, lng) {
       const place = json.name
       cityContainer.innerText = `${place}`
       tempContainer.innerText = `${temperature}`
-      locationIcon.innerHTML = `<img src="img/icons/${icon}.png"></img>`
+      locationIcon.innerHTML = `<img src="img/icons/${icon}.webp"></img>`
     })
 }
 
