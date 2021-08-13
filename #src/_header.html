@@ -2,14 +2,20 @@
   <div class="header__content">
     <div class="header__items">
       <div class="header__search">
-        <form action="http://www.google.com/search" method="get">
-          <input type="text" name="q">
+        <form class="search__group" action="https://www.google.com/search?q=" method="get">
+          <i class="_icon-search search__icon-search"></i>
+          <input type="text" autocomplete="off" class="search__input" name="q">
+          <button href="#" class="_icon-google search__icon-google"></button>
         </form>
       </div>
       <div class="header__weather">
-        <div class="weather-icon"><img src="img/icons/unknown.webp"></div>
+        <div class="weather-temp">
+          <div class="weather-icon">
+            <img src="img/icons/unknown.webp">
+          </div>
+          <span class="js-temp temp"></span>
+        </div>
         <span class="js-city city"></span>
-        <span class="js-temp temp"></span>
       </div>
     </div>
   </div>

@@ -1,5 +1,47 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: "icomoon";
+  font-display: swap;
+  src: url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2#icons") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+._icon-search:before {
+  content: "";
+}
+
+._icon-google:before {
+  content: "";
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -881,12 +923,7 @@ body.ie ._ibg img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.header__search {
-  font-weight: 500;
-  line-height: 60px;
-  font-size: 107.1428571429%;
+  padding: 10px 20px;
 }
 
 .header__weather {
@@ -903,6 +940,63 @@ body.ie ._ibg img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.search__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search__group:hover {
+  border-bottom: solid 1px #000;
+}
+
+.search__icon-search {
+  color: #000;
+}
+
+.search__input {
+  padding: 5px 0px;
+  margin: 0 0 0 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.search__input:hover + .search__icon-google {
+  opacity: 1;
+}
+
+.search__icon-google {
+  opacity: 0;
+  z-index: -1;
+}
+
+.weather-icon img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.city {
+  -webkit-filter: invert(20);
+          filter: invert(20);
+  font-weight: 500;
+  font-size: 107.1428571429%;
+}
+
+.temp {
+  -webkit-filter: invert(20);
+          filter: invert(20);
+  font-size: 1.625rem;
+  font-weight: 400;
+}
+
+.weather-temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /*
