@@ -29,7 +29,7 @@ function submitHandler(event) {
 }
 
 function showGreetings(text) {
-  greetings.innerText = `Hi, ${text}`
+  greetings.innerText = `Привет, ${text}`
   greetings.classList.add(SHOWING_ON)
   form.classList.remove(SHOWING_ON)
 }
@@ -127,6 +127,8 @@ function getRandom() {
   const number = Math.floor(Math.random() * IMAGE_NUMBER)
   return number
 }
+
+
 
 /////////////////// bg/
 /////////////////// weather

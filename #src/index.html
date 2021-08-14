@@ -8,18 +8,24 @@
   <div class="wrapper">
     @@include('_header.html',{})
     <main class="page">
-      <div class="_container">
-        <div class="js-clock">
-          <h1>00:00</h1>
+      <div class="content">
+        <div class="content__top"></div>
+        <div class="content__main">
+          <div class="js-clock main__clock-div">
+            <h1 class="main__clock-h1">00:00</h1>
+          </div>
+          <form action="" class="js-form main__form">
+            <input class="main__form-input" type="text" placeholder="Как тебя зовут?">
+          </form>
+          <h2 class="js-greetings main__greetings"></h2>
         </div>
-        <form action="" class="js-form form">
-          <input type="text" placeholder="Your name?">
-        </form>
-        <h2 class="js-greetings greetings"></h2>
-        <form action="" class="js-toDo">
-          <input type="text" placeholder="Your ToDo">
-        </form>
-        <ul class="js-toDoList"></ul>
+        <div class="content__bot">
+          <form action="" class="js-toDo bot__toDo">
+            <input class="bot__toDo-input" type="text" placeholder="Твой ToDo">
+          </form>
+          <ul class="js-toDoList bot__toDo-ul"></ul>
+        </div>
+
       </div>
     </main>
     @@include('_footer.html',{})

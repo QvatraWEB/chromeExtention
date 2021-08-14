@@ -923,6 +923,9 @@ body.ie ._ibg img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px 20px;
 }
 
@@ -949,10 +952,15 @@ body.ie ._ibg img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
-.search__group:hover {
+.search__group:hover .search__input {
   border-bottom: solid 1px #000;
+}
+
+.search__group:hover .search__icon-google {
+  display: block;
 }
 
 .search__icon-search {
@@ -960,22 +968,19 @@ body.ie ._ibg img {
 }
 
 .search__input {
-  padding: 5px 0px;
+  padding: 5px 10px 5px 0;
   margin: 0 0 0 10px;
   background-color: rgba(0, 0, 0, 0);
-}
-
-.search__input:hover + .search__icon-google {
-  opacity: 1;
+  border-bottom: solid 1px #000;
 }
 
 .search__icon-google {
-  opacity: 0;
-  z-index: -1;
+  position: absolute;
+  right: 0;
 }
 
 .weather-icon img {
-  height: 20px;
+  height: 36px;
   margin-right: 10px;
 }
 
@@ -997,6 +1002,12 @@ body.ie ._ibg img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /*
@@ -1132,5 +1143,33 @@ body.ie ._ibg img {
   ._container {
     max-width: none;
     padding: 0 10px;
+  }
+
+  .search__input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .search__input {
+    width: 100px;
+  }
+
+  .city {
+    font-size: 100%;
+  }
+
+  .temp {
+    font-size: 1.3rem;
+  }
+}
+
+@media (any-hover: hover) {
+  .search__input {
+    border-bottom: none;
+  }
+
+  .search__icon-google {
+    display: none;
   }
 }
