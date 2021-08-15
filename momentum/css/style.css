@@ -38,6 +38,14 @@
   content: "";
 }
 
+._icon-checkbox-checked:before {
+  content: "";
+}
+
+._icon-checkbox-unchecked:before {
+  content: "";
+}
+
 ._icon-google:before {
   content: "";
 }
@@ -1182,6 +1190,33 @@ body.ie ._ibg img {
   letter-spacing: -5px;
 }
 
+.main__form input {
+  width: 100%;
+  padding-top: 4px;
+  display: block;
+  background: 0;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 2.25em;
+  line-height: 1.2;
+  font-weight: 500;
+  outline: none;
+  text-align: center;
+  -webkit-transition: border-color 0.2s ease;
+  -o-transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+
+.main__form-h2 {
+  padding-bottom: 15px;
+  line-height: 1.2;
+  white-space: normal;
+  font-size: 337.5%;
+  text-align: center;
+  font-weight: 400;
+}
+
 .main__greetings {
   font-weight: 500;
   font-size: 337.5%;
@@ -1215,6 +1250,28 @@ body.ie ._ibg img {
   -webkit-transition: border-color 0.2s ease;
   -o-transition: border-color 0.2s ease;
   transition: border-color 0.2s ease;
+}
+
+.bot__focus-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bot__focus-icon {
+  visibility: hidden;
+}
+
+.bot__focus-li {
+  margin-left: 10px;
+}
+
+._icon-checkbox-checked + .bot__focus-li {
+  text-decoration: line-through;
+}
+
+.zi {
+  z-index: 100;
 }
 
 .test {
@@ -1296,5 +1353,9 @@ body.ie ._ibg img {
 
   .search__icon-google {
     display: none;
+  }
+
+  .bot__focus-div:hover .bot__focus-icon {
+    visibility: visible;
   }
 }

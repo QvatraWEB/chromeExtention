@@ -1,3 +1,4 @@
+
 ////////////////////// clock
 const clockContainer = document.querySelector('.js-clock'),
   clockTitle = clockContainer.querySelector('h1')
@@ -33,7 +34,7 @@ function showGreetings(text) {
   greetings.innerText = `${timeForGreeting()}, ${text}.`
   greetings.classList.add(SHOWING_CN)
   vform.classList.remove(SHOWING_CN)
-  document.querySelector('.wrapper').style.visibility = 'visible'
+  img.classList.toggle('zi')
 }
 
 function timeForGreeting() {
@@ -54,17 +55,36 @@ function askUsername() {
   vform.classList.add(SHOWING_CN)
   vform.addEventListener('submit', submitHandlerName)
 }
-
 function loadUsername() {
   const currentUsername = localStorage.getItem(USER_LS)
-  document.querySelector('.wrapper').style.visibility = 'hidden'
-  document.querySelector('.js-form').style.visibility = 'visible'
+  /* document.querySelector('.wrapper').style.visibility = 'hidden'
+  document.querySelector('.js-form').style.visibility = 'visible' */
+  img.classList.toggle('zi')
+  document.querySelector('.js-form').style.zIndex = "101"
   if (currentUsername === null) {
     askUsername()
 
   } else {
     showGreetings(currentUsername)
   }
+}
+const focusDiv = document.querySelector('.bot__focus-div')
+const i = focusDiv.querySelector('.js-chec')
+
+function removeChec() {
+  if (i.classList.contains("_icon-checkbox-unchecked")) {
+    i.classList.remove('_icon-checkbox-unchecked')
+    i.classList.add('_icon-checkbox-checked')
+  } else {
+    i.classList.remove('_icon-checkbox-checked')
+    i.classList.add('_icon-checkbox-unchecked')
+  }
+
+}
+
+function chec() {
+
+  i.addEventListener('click', removeChec)
 }
 
 /////////////////// Name/
@@ -135,8 +155,8 @@ function submitHandlerTODO(event) {
 
 const body = document.querySelector('body')
 const IMAGE_NUMBER = 4
+const img = new Image()
 function showImage(number) {
-  const img = new Image()
   img.src = `img/back/${number + 1}.webp`
   img.classList.add('bgImage')
   body.prepend(img)
@@ -259,7 +279,7 @@ function init() {
   const randomNumber = getRandom()
   showImage(randomNumber)
   getCoords()
-
+  chec()
 }
 
 init();
