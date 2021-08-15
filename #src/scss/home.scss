@@ -146,16 +146,16 @@
   }
   &__focus-div {
     display: flex;
-    @media (any-hover: hover) {
-      &:hover {
-        .bot__focus-icon {
-          visibility: visible;
-        }
+    &:hover {
+      .bot__focus-icon {
+        visibility: visible;
       }
     }
   }
   &__focus-icon {
-    visibility: hidden;
+    @media (any-hover: hover) {
+      visibility: hidden;
+    }
   }
   &__focus-li {
     margin-left: 10px;

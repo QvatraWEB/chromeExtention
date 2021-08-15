@@ -1258,8 +1258,8 @@ body.ie ._ibg img {
   display: flex;
 }
 
-.bot__focus-icon {
-  visibility: hidden;
+.bot__focus-div:hover .bot__focus-icon {
+  visibility: visible;
 }
 
 .bot__focus-li {
@@ -1355,7 +1355,7 @@ body.ie ._ibg img {
     display: none;
   }
 
-  .bot__focus-div:hover .bot__focus-icon {
-    visibility: visible;
+  .bot__focus-icon {
+    visibility: hidden;
   }
 }
