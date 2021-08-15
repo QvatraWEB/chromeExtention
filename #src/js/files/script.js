@@ -68,25 +68,6 @@ function loadUsername() {
     showGreetings(currentUsername)
   }
 }
-const focusDiv = document.querySelector('.bot__focus-div')
-const i = focusDiv.querySelector('.js-chec')
-
-function removeChec() {
-  if (i.classList.contains("_icon-checkbox-unchecked")) {
-    i.classList.remove('_icon-checkbox-unchecked')
-    i.classList.add('_icon-checkbox-checked')
-  } else {
-    i.classList.remove('_icon-checkbox-checked')
-    i.classList.add('_icon-checkbox-unchecked')
-  }
-
-}
-
-function chec() {
-
-  i.addEventListener('click', removeChec)
-}
-
 /////////////////// Name/
 /////////////////// ToDo
 
@@ -228,6 +209,26 @@ function getCoords() {
 }
 
 /////////////////// weather/
+const focusDiv = document.querySelector('.bot__focus-div')
+const i = focusDiv.querySelector('.js-chec')
+
+function removeChec() {
+  if (i.classList.contains("_icon-checkbox-unchecked")) {
+    i.classList.remove('_icon-checkbox-unchecked')
+    i.classList.add('_icon-checkbox-checked')
+  } else {
+    i.classList.remove('_icon-checkbox-checked')
+    i.classList.add('_icon-checkbox-unchecked')
+  }
+
+}
+
+function chec() {
+
+  i.addEventListener('click', removeChec)
+}
+
+
 
 const formFocus = document.querySelector('.js-form-focus'),
   inputF = formFocus.querySelector('input'),
@@ -253,6 +254,7 @@ function showFocus(text) {
   formFocus.classList.remove(SHOW_CNFO)
   askFokus.classList.add('zad')
   askFokus.innerText = 'Задания на сегодня:'
+  i.classList.add(SHOW_CNFO)
 }
 
 function askFocus() {

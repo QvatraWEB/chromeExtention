@@ -1074,7 +1074,8 @@ body.ie ._ibg img {
 }
 
 .bot__form-focus,
-.bot__focus-li {
+.bot__focus-li,
+.bot__focus-icon {
   display: none;
 }
 
