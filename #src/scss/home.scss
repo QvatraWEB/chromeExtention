@@ -146,9 +146,11 @@
   }
   &__focus-div {
     display: flex;
-    &:hover {
-      .bot__focus-icon {
-        visibility: visible;
+    @media (any-hover: hover) {
+      &:hover {
+        .bot__focus-icon {
+          visibility: visible;
+        }
       }
     }
   }
