@@ -1,12 +1,24 @@
 //====================================================================================================
-.form,
-.greetings {
+.main__form,
+.main__greetings {
   display: none;
 }
 .show {
   display: block;
 }
-
+.bot__form-focus,
+.bot__focus-li {
+  display: none;
+}
+.zad {
+  margin: 17px 0 8px;
+  font-size: 70%;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.showing {
+  display: block;
+}
 @keyframes fadein {
   from {
     opacity: 0;
@@ -24,6 +36,98 @@
   left: 0;
   z-index: -1;
   animation: fadein 1s linear;
+}
+
+.page {
+}
+.content {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 185px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    flex: 1 1 224px;
+  }
+
+  &__bot {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    flex: 1 1 50%;
+  }
+}
+.main {
+  &__clock-div {
+  }
+
+  &__clock-h1 {
+    cursor: default;
+    font-size: 1050%;
+    letter-spacing: -5px;
+  }
+
+  &__form {
+  }
+
+  &__form-input {
+  }
+
+  &__greetings {
+    font-weight: 500;
+    font-size: 337.5%;
+    cursor: default;
+  }
+}
+.bot {
+  &__focus {
+    font-size: 2.1875em;
+    font-weight: 400;
+
+    line-height: normal;
+    cursor: default;
+  }
+  &__form-focus {
+    margin: 10px 0 0 0;
+    input {
+      width: 100%;
+      padding-top: 4px;
+      display: block;
+      background: 0;
+      border: 0;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      font-size: 2.25em;
+      line-height: 1.2;
+      font-weight: 500;
+      outline: none;
+      text-align: center;
+      transition: border-color 0.2s ease;
+    }
+  }
+
+  &__focus-input {
+  }
+
+  &__focus-li {
+  }
+}
+
+.test {
+  display: none;
 }
 
 //====================================================================================================

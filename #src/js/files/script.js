@@ -8,41 +8,60 @@ function getTime() {
   const hours = date.getHours()
   clockTitle.innerHTML = `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}`
 }
+
 ////////////////////// clock/
 
 /////////////////// Name
-const form = document.querySelector('.js-form'),
-  input = form.querySelector('input'),
+const vform = document.querySelector('.js-form'),
+  vinput = vform.querySelector('input'),
   greetings = document.querySelector('.js-greetings')
 const USER_LS = 'currentUsername',
-  SHOWING_ON = 'show'
+  SHOWING_CN = 'show'
 
 function saveUsername(text) {
   localStorage.setItem(USER_LS, text)
 }
 
-function submitHandler(event) {
+function submitHandlerName(event) {
   event.preventDefault()
-  const inputValue = input.value
+  const inputValue = vinput.value
   showGreetings(inputValue)
   saveUsername(inputValue)
 }
 
 function showGreetings(text) {
-  greetings.innerText = `Привет, ${text}`
-  greetings.classList.add(SHOWING_ON)
-  form.classList.remove(SHOWING_ON)
+  greetings.innerText = `${timeForGreeting()}, ${text}.`
+  greetings.classList.add(SHOWING_CN)
+  vform.classList.remove(SHOWING_CN)
+  document.querySelector('.wrapper').style.visibility = 'visible'
+}
+
+function timeForGreeting() {
+  const date = new Date()
+  const hours = date.getHours()
+  if (hours <= 11 && hours >= 06) {
+    return 'Доброе утро'
+  } if (hours > 11 && hours < 19) {
+    return 'Добрый день'
+  } if (hours >= 19 && hours < 00) {
+    return 'Добрый вечер'
+  } if (hours >= 00 && hours < 06) {
+    return 'Хорошей ночи'
+  }
 }
 
 function askUsername() {
-  form.classList.add(SHOWING_ON)
-  form.addEventListener('submit', submitHandler)
+  vform.classList.add(SHOWING_CN)
+  vform.addEventListener('submit', submitHandlerName)
 }
 
 function loadUsername() {
   const currentUsername = localStorage.getItem(USER_LS)
+  document.querySelector('.wrapper').style.visibility = 'hidden'
+  document.querySelector('.js-form').style.visibility = 'visible'
   if (currentUsername === null) {
     askUsername()
+
   } else {
     showGreetings(currentUsername)
   }
@@ -51,7 +70,7 @@ function loadUsername() {
 /////////////////// Name/
 /////////////////// ToDo
 
-const toDoForm = document.querySelector('.js-toDo'),
+/* const toDoForm = document.querySelector('.js-toDo'),
   toDoInput = toDoForm.querySelector('input'),
   toDoList = document.querySelector('.js-toDoList')
 
@@ -104,12 +123,12 @@ function showToDos(text) {
   saveToDos()
 }
 
-function submitHandler(event) {
+function submitHandlerTODO(event) {
   event.preventDefault()
   const currentValue = toDoInput.value
   showToDos(currentValue)
   toDoInput.value = ""
-}
+} */
 
 /////////////////// ToDo/
 /////////////////// Background
@@ -189,15 +208,58 @@ function getCoords() {
 }
 
 /////////////////// weather/
+
+const formFocus = document.querySelector('.js-form-focus'),
+  inputF = formFocus.querySelector('input'),
+  liFocus = document.querySelector('.js-focus-li'),
+  askFokus = document.querySelector('.bot__focus')
+const USER_FOCUS = 'current',
+  SHOW_CNFO = 'showing'
+
+function saveFocus(text) {
+  localStorage.setItem(USER_FOCUS, text)
+}
+
+function submitHandlerFocus(event) {
+  event.preventDefault()
+  const inputFocus = inputF.value
+  showFocus(inputFocus)
+  saveFocus(inputFocus)
+}
+
+function showFocus(text) {
+  liFocus.innerText = text
+  liFocus.classList.add(SHOW_CNFO)
+  formFocus.classList.remove(SHOW_CNFO)
+  askFokus.classList.add('zad')
+  askFokus.innerText = 'Задания на сегодня:'
+}
+
+function askFocus() {
+  formFocus.classList.add(SHOW_CNFO)
+  formFocus.addEventListener('submit', submitHandlerFocus)
+}
+
+function loadFocus() {
+  const currentFok = localStorage.getItem(USER_FOCUS)
+  if (currentFok === null) {
+    askFocus()
+  } else {
+    showFocus(currentFok)
+  }
+}
+
 function init() {
+  loadUsername()
   getTime()
   setInterval(getTime, 1000)
-  loadUsername()
-  loadToDos()
-  toDoForm.addEventListener('submit', submitHandler)
+  loadFocus()
+  /* loadToDos()
+  toDoForm.addEventListener('submit', submitHandlerTODO) */
   const randomNumber = getRandom()
   showImage(randomNumber)
   getCoords()
+
 }
 
 init();
