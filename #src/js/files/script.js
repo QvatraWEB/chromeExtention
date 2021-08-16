@@ -253,12 +253,14 @@ function submitHandlerFocus(event) {
   const inputFocus = inputF.value
   showFocus(inputFocus)
   saveFocus(inputFocus)
+
 }
 
 function showFocus(text) {
   liFocus.innerText = text
   liFocus.classList.add(SHOW_CNFO)
   formFocus.classList.remove(SHOW_CNFO)
+  formFocus.style.display = ''
   askFokus.classList.add('zad')
   askFokus.innerText = 'Задания на сегодня:'
   i.classList.add(SHOW_CNFO)
@@ -281,7 +283,9 @@ function deleteFocus() {
 
 function askFocus() {
   formFocus.classList.add(SHOW_CNFO)
+  formFocus.style.display = 'flex'
   formFocus.addEventListener('submit', submitHandlerFocus)
+  formFocus.querySelector('.bot__focus-plus').addEventListener('click', submitHandlerFocus)
 }
 
 function loadFocus() {

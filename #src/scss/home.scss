@@ -163,7 +163,14 @@
       }
     }
   }
-
+  &__focus-plus {
+    display: none;
+    color: #fff;
+    align-self: center;
+    @media (max-width: $md3+px) {
+      display: flex;
+    }
+  }
   &__focus-input {
   }
   &__focus-div {

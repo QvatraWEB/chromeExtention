@@ -42,6 +42,10 @@
   content: "";
 }
 
+._icon-plus:before {
+  content: "";
+}
+
 ._icon-checkbox-checked:before {
   content: "";
 }
@@ -1245,6 +1249,14 @@ body.ie ._ibg img {
   transition: border-color 0.2s ease;
 }
 
+.bot__focus-plus {
+  display: none;
+  color: #fff;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .bot__focus-div {
   font-size: 1.875em;
   display: -webkit-box;
@@ -1391,6 +1403,12 @@ body.ie ._ibg img {
 
   .bot__form-focus input {
     width: 300px;
+  }
+
+  .bot__focus-plus {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .bot__focus-div {
