@@ -976,6 +976,7 @@ body.ie ._ibg img {
 }
 
 .search__input {
+  color: #fff;
   padding: 5px 10px 5px 0;
   margin: 0 0 0 10px;
   background: 0;

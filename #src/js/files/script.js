@@ -273,6 +273,10 @@ function deleteFocus() {
   i.classList.remove(SHOW_CNFO)
   liFocus.classList.remove(SHOW_CNFO)
   inputF.value = ""
+  if (i.classList.contains('_icon-checkbox-checked')) {
+    i.classList.remove('_icon-checkbox-checked')
+    i.classList.add('_icon-checkbox-unchecked')
+  }
 }
 
 function askFocus() {
