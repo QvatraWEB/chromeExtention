@@ -133,7 +133,7 @@ function submitHandlerTODO(event) {
 /////////////////// Background
 
 const body = document.querySelector('body')
-const IMAGE_NUMBER = 5
+const IMAGE_NUMBER = 8
 const img = new Image()
 function showImage(number) {
   img.src = `img/back/${number + 1}.webp`
@@ -292,14 +292,15 @@ function loadFocus() {
 }
 
 function init() {
+  const randomNumber = getRandom()
+  showImage(randomNumber)
   loadUsername()
   getTime()
   setInterval(getTime, 1000)
   loadFocus()
   /* loadToDos()
   toDoForm.addEventListener('submit', submitHandlerTODO) */
-  const randomNumber = getRandom()
-  showImage(randomNumber)
+
   getCoords()
   chec()
   del()

@@ -44,11 +44,11 @@
 
   align-items: center;
   &__top {
+    @include adaptiv-value("height", 300, 100, 1);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    flex: 1 1 300px;
   }
 
   &__main {
@@ -60,7 +60,7 @@
   }
 
   &__bot {
-    margin: 20px 0 0 0;
+    margin: 20px 0 40px 0;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -76,6 +76,13 @@
     cursor: default;
     font-size: 1050%;
     letter-spacing: -5px;
+    @media (max-width: $md3+px) {
+      font-size: 700%;
+    }
+    @media (max-width: $md3+px) {
+      margin-top: 50px;
+      font-size: 600%;
+    }
   }
 
   &__form {
@@ -110,6 +117,12 @@
     font-weight: 500;
     font-size: 337.5%;
     cursor: default;
+    @media (max-width: $md3+px) {
+      font-size: 250%;
+    }
+    @media (max-width: $md3+px) {
+      font-size: 200%;
+    }
   }
 }
 .bot {
@@ -119,6 +132,15 @@
     margin-top: 70px;
     line-height: normal;
     cursor: default;
+    @media (max-width: $md3+px) {
+      font-size: 1.85em;
+      margin: 40px 10px 0 10px;
+      padding: 0 30px;
+    }
+    @media (max-width: $md3+px) {
+      margin: 0px 10px 0 10px;
+      font-size: 1.5em;
+    }
   }
   &__form-focus {
     margin: 10px 0 0 0;
@@ -136,6 +158,9 @@
       outline: none;
       text-align: center;
       transition: border-color 0.2s ease;
+      @media (max-width: $md3+px) {
+        width: 300px;
+      }
     }
   }
 
@@ -146,6 +171,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: $md3+px) {
+      margin: 20px 0 3px 10px;
+    }
     @media (any-hover: hover) {
       &:hover {
         .bot__focus-icon,
@@ -161,15 +189,21 @@
     @media (any-hover: hover) {
       visibility: hidden;
     }
+    @media (max-width: $md3+px) {
+      font-size: 16px;
+    }
   }
   &__focus-li {
     margin: 3px 0 3px 10px;
+    @media (max-width: $md3+px) {
+      font-size: 0.85em;
+    }
   }
   &__focus-del-chec {
     align-self: center;
     font-size: 20px;
-    margin: 0 0 0 10px;
-    padding: 5px;
+    margin: 5px 10px;
+    padding: 5px 10px;
     cursor: pointer;
     @media (any-hover: hover) {
       visibility: hidden;
@@ -177,6 +211,7 @@
     &:hover {
       background-color: rgba(255, 255, 255, 0.199);
       border-radius: 50%;
+      padding: 5px 10px;
     }
   }
 }
