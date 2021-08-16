@@ -1081,6 +1081,10 @@ body.ie ._ibg img {
   display: block;
 }
 
+body {
+  overflow: hidden;
+}
+
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
