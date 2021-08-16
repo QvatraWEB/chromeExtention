@@ -56,7 +56,7 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    flex: 1 1 224px;
+    margin-top: -50px;
   }
 
   &__bot {
@@ -80,25 +80,13 @@
       font-size: 700%;
     }
     @media (max-width: $md3+px) {
-      margin-top: 50px;
+      margin-top: 90px;
       font-size: 600%;
     }
   }
 
   &__form {
     input {
-      width: 100%;
-      padding-top: 4px;
-      display: block;
-      background: 0;
-      border: 0;
-      border-bottom: 2px solid #fff;
-      font-size: 2.25em;
-      line-height: 1.2;
-      font-weight: 500;
-      outline: none;
-      text-align: center;
-      transition: border-color 0.2s ease;
     }
   }
   &__form-h2 {
@@ -111,6 +99,24 @@
   }
 
   &__form-input {
+    align-self: center;
+    color: #fff;
+    width: 100%;
+    padding-top: 4px;
+    display: block;
+    background: 0;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    font-size: 2.25em;
+    line-height: 1.2;
+    font-weight: 500;
+    outline: none;
+    text-align: center;
+    transition: border-color 0.2s ease;
+    margin: 0 auto;
+    @media (max-width: $md3+px) {
+      width: 300px;
+    }
   }
 
   &__greetings {
@@ -164,6 +170,7 @@
     }
   }
   &__focus-plus {
+    padding-left: 10px;
     display: none;
     color: #fff;
     align-self: center;
@@ -223,7 +230,7 @@
   }
 }
 .zad {
-  margin: 90px 0 8px;
+  margin: 50px 0 8px;
   font-size: 1.85em;
   line-height: 120%;
   text-transform: uppercase;
