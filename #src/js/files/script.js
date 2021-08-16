@@ -17,7 +17,7 @@ const vform = document.querySelector('.js-form'),
   vinput = vform.querySelector('input'),
   greetings = document.querySelector('.js-greetings')
 const USER_LS = 'currentUsername',
-  SHOWING_CN = 'show'
+  SHOWING_CN = 'showing'
 
 function saveUsername(text) {
   localStorage.setItem(USER_LS, text)
@@ -39,14 +39,14 @@ function showGreetings(text) {
 
 function timeForGreeting() {
   const date = new Date()
-  const hours = date.getHours()
-  if (hours <= 11 && hours >= 06) {
+  const hour = date.getHours()
+  if (hour >= 05 && hour < 12) {
     return 'Доброе утро'
-  } if (hours > 11 && hours < 19) {
+  } if (hour >= 12 && hour < 18) {
     return 'Добрый день'
-  } if (hours >= 19 && hours < 00) {
+  } if (hour >= 18 && hour < 24) {
     return 'Добрый вечер'
-  } if (hours >= 00 && hours < 06) {
+  } if (hour >= 00 && hour < 05) {
     return 'Хорошей ночи'
   }
 }
@@ -57,8 +57,6 @@ function askUsername() {
 }
 function loadUsername() {
   const currentUsername = localStorage.getItem(USER_LS)
-  /* document.querySelector('.wrapper').style.visibility = 'hidden'
-  document.querySelector('.js-form').style.visibility = 'visible' */
   img.classList.toggle('zi')
   document.querySelector('.js-form').style.zIndex = "101"
   if (currentUsername === null) {
@@ -74,11 +72,11 @@ function loadUsername() {
 /* const toDoForm = document.querySelector('.js-toDo'),
   toDoInput = toDoForm.querySelector('input'),
   toDoList = document.querySelector('.js-toDoList')
-
+ 
 const TODOS_LS = 'toDoS'
-
+ 
 let toDos = []
-
+ 
 function loadToDos() {
   const loaded_todos = localStorage.getItem(TODOS_LS)
   if (loaded_todos !== null) {
@@ -88,11 +86,11 @@ function loadToDos() {
     })
   }
 }
-
+ 
 function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos))
 }
-
+ 
 function deleteToDo(event) {
   const btn = event.target
   const li = btn.parentNode
@@ -103,7 +101,7 @@ function deleteToDo(event) {
   toDos = cleanToDos
   saveToDos()
 }
-
+ 
 function showToDos(text) {
   const li = document.createElement('li')
   const delBtn = document.createElement('button')
@@ -123,7 +121,7 @@ function showToDos(text) {
   toDos.push(toDoObject)
   saveToDos()
 }
-
+ 
 function submitHandlerTODO(event) {
   event.preventDefault()
   const currentValue = toDoInput.value
@@ -135,7 +133,7 @@ function submitHandlerTODO(event) {
 /////////////////// Background
 
 const body = document.querySelector('body')
-const IMAGE_NUMBER = 4
+const IMAGE_NUMBER = 5
 const img = new Image()
 function showImage(number) {
   img.src = `img/back/${number + 1}.webp`
@@ -211,6 +209,16 @@ function getCoords() {
 /////////////////// weather/
 const focusDiv = document.querySelector('.bot__focus-div')
 const i = focusDiv.querySelector('.js-chec')
+const delChec = focusDiv.querySelector('span')
+
+function del() {
+  delChec.addEventListener('click', deleteFocus)
+}
+
+
+
+
+
 
 function removeChec() {
   if (i.classList.contains("_icon-checkbox-unchecked")) {
@@ -224,7 +232,6 @@ function removeChec() {
 }
 
 function chec() {
-
   i.addEventListener('click', removeChec)
 }
 
@@ -255,6 +262,17 @@ function showFocus(text) {
   askFokus.classList.add('zad')
   askFokus.innerText = 'Задания на сегодня:'
   i.classList.add(SHOW_CNFO)
+  delChec.classList.add(SHOW_CNFO)
+}
+function deleteFocus() {
+  localStorage.removeItem(USER_FOCUS)
+  loadFocus()
+  askFokus.classList.remove('zad')
+  askFokus.innerText = 'На чем вы сосредоточены сегодня?'
+  delChec.classList.remove(SHOW_CNFO)
+  i.classList.remove(SHOW_CNFO)
+  liFocus.classList.remove(SHOW_CNFO)
+  inputF.value = ""
 }
 
 function askFocus() {
@@ -265,8 +283,10 @@ function askFocus() {
 function loadFocus() {
   const currentFok = localStorage.getItem(USER_FOCUS)
   if (currentFok === null) {
+
     askFocus()
   } else {
+
     showFocus(currentFok)
   }
 }
@@ -282,6 +302,7 @@ function init() {
   showImage(randomNumber)
   getCoords()
   chec()
+  del()
 }
 
 init();

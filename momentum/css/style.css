@@ -34,6 +34,10 @@
   display: block;
 }
 
+._icon-dots-three-horizontal:before {
+  content: "";
+}
+
 ._icon-search:before {
   content: "";
 }
@@ -138,7 +142,7 @@ h6 {
 }
 
 body {
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
 }
 
 body._lock {
@@ -964,44 +968,39 @@ body.ie ._ibg img {
 }
 
 .search__group:hover .search__input {
-  border-bottom: solid 1px #000;
+  border-bottom: solid 1px #fff;
 }
 
 .search__group:hover .search__icon-google {
   display: block;
 }
 
-.search__icon-search {
-  color: #000;
-}
-
 .search__input {
   padding: 5px 10px 5px 0;
   margin: 0 0 0 10px;
-  background-color: rgba(0, 0, 0, 0);
-  border-bottom: solid 1px #000;
+  background: 0;
+  border-bottom: solid 1px #fff;
 }
 
 .search__icon-google {
   position: absolute;
   right: 0;
+  color: #fff;
 }
 
 .weather-icon img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
   height: 36px;
   margin-right: 10px;
 }
 
 .city {
-  -webkit-filter: invert(20);
-          filter: invert(20);
   font-weight: 500;
   font-size: 120%;
 }
 
 .temp {
-  -webkit-filter: invert(20);
-          filter: invert(20);
   font-size: 1.625rem;
   font-weight: 400;
 }
@@ -1065,25 +1064,12 @@ body.ie ._ibg img {
 */
 
 .main__form,
-.main__greetings {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
+.main__greetings,
 .bot__form-focus,
 .bot__focus-li,
-.bot__focus-icon {
+.bot__focus-icon,
+.bot__focus-del-chec {
   display: none;
-}
-
-.zad {
-  margin: 17px 0 8px;
-  font-size: 70%;
-  line-height: 120%;
-  text-transform: uppercase;
 }
 
 .showing {
@@ -1111,17 +1097,24 @@ body.ie ._ibg img {
 }
 
 .bgImage {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   z-index: -1;
   -webkit-animation: fadein 1s linear;
           animation: fadein 1s linear;
 }
 
 .content {
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1146,8 +1139,8 @@ body.ie ._ibg img {
           align-items: center;
   text-align: center;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 185px;
-          flex: 1 1 185px;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
 }
 
 .content__main {
@@ -1198,7 +1191,6 @@ body.ie ._ibg img {
   background: 0;
   border: 0;
   border-bottom: 2px solid #fff;
-  color: #fff;
   font-size: 2.25em;
   line-height: 1.2;
   font-weight: 500;
@@ -1227,6 +1219,7 @@ body.ie ._ibg img {
 .bot__focus {
   font-size: 2.1875em;
   font-weight: 400;
+  margin-top: 70px;
   line-height: normal;
   cursor: default;
 }
@@ -1254,13 +1247,47 @@ body.ie ._ibg img {
 }
 
 .bot__focus-div {
+  font-size: 1.875em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bot__focus-icon {
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .bot__focus-li {
-  margin-left: 10px;
+  margin: 3px 0 3px 10px;
+}
+
+.bot__focus-del-chec {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 20px;
+  margin: 0 0 0 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.bot__focus-del-chec:hover {
+  background-color: rgba(255, 255, 255, 0.199);
+  border-radius: 50%;
+}
+
+.zad {
+  margin: 90px 0 8px;
+  font-size: 1.85em;
+  line-height: 120%;
+  text-transform: uppercase;
 }
 
 ._icon-checkbox-checked + .bot__focus-li {
@@ -1352,11 +1379,16 @@ body.ie ._ibg img {
     display: none;
   }
 
-  .bot__focus-div:hover .bot__focus-icon {
+  .bot__focus-div:hover .bot__focus-icon,
+  .bot__focus-div:hover .bot__focus-del-chec {
     visibility: visible;
   }
 
   .bot__focus-icon {
+    visibility: hidden;
+  }
+
+  .bot__focus-del-chec {
     visibility: hidden;
   }
 }
