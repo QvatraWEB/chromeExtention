@@ -861,28 +861,50 @@ function loadUsername() {
 /////////////////// Name/
 /////////////////// ToDo
 
-/* const toDoForm = document.querySelector('.js-toDo'),
+const toDoForm = document.querySelector('.js-toDo'),
   toDoInput = toDoForm.querySelector('input'),
-  toDoList = document.querySelector('.js-toDoList')
- 
+  toDoList = document.querySelector('.js-toDoList'),
+  toDoApp = document.querySelector('.todo__app'),
+  toDoBtn = document.querySelector('.js-toDoBtn'),
+  clickToDoFooter = document.querySelector('.js-todoFooter')
+
 const TODOS_LS = 'toDoS'
- 
+
 let toDos = []
- 
+
+function footerHandlerTODO() {
+  toDoApp.classList.toggle(SHOWING_CN)
+  toDoInput.classList.remove(SHOWING_CN)
+  toDoBtn.classList.add(SHOWING_CN)
+}
+
+function clickBtn() {
+  toDoBtn.addEventListener('click', clickHandlerTODO)
+  toDoForm.addEventListener('submit', submitHandlerTODO)
+
+}
+
+function clickHandlerTODO() {
+  toDoBtn.classList.remove(SHOWING_CN)
+  toDoInput.classList.add(SHOWING_CN)
+  toDoInput.focus()
+}
+
 function loadToDos() {
   const loaded_todos = localStorage.getItem(TODOS_LS)
   if (loaded_todos !== null) {
+    toDoBtn.classList.add(SHOWING_CN)
     const parsedToDos = JSON.parse(loaded_todos)
     parsedToDos.forEach(function (toDo) {
       showToDos(toDo.name)
     })
   }
 }
- 
+
 function saveToDos() {
   localStorage.setItem(TODOS_LS, JSON.stringify(toDos))
 }
- 
+
 function deleteToDo(event) {
   const btn = event.target
   const li = btn.parentNode
@@ -893,17 +915,22 @@ function deleteToDo(event) {
   toDos = cleanToDos
   saveToDos()
 }
- 
+
 function showToDos(text) {
   const li = document.createElement('li')
   const delBtn = document.createElement('button')
   const span = document.createElement('span')
   const newId = toDos.length + 1
-  delBtn.innerHTML = 'x'
+
+
   span.innerText = text
+  delBtn.innerHTML = 'x'
+  li.classList.add('li-todo')
+  delBtn.classList.add('btn-todo')
+  span.classList.add('span-todo')
+  li.appendChild(span)
   li.appendChild(delBtn)
   delBtn.addEventListener('click', deleteToDo)
-  li.appendChild(span)
   li.id = newId
   toDoList.appendChild(li)
   const toDoObject = {
@@ -913,13 +940,13 @@ function showToDos(text) {
   toDos.push(toDoObject)
   saveToDos()
 }
- 
+
 function submitHandlerTODO(event) {
   event.preventDefault()
   const currentValue = toDoInput.value
   showToDos(currentValue)
   toDoInput.value = ""
-} */
+}
 
 /////////////////// ToDo/
 /////////////////// Background
@@ -1098,12 +1125,12 @@ function init() {
   getTime()
   setInterval(getTime, 1000)
   loadFocus()
-  /* loadToDos()
-  toDoForm.addEventListener('submit', submitHandlerTODO) */
-
+  loadToDos()
   getCoords()
   chec()
   del()
+  clickBtn()
+  clickToDoFooter.addEventListener('click', footerHandlerTODO)
 }
 
 init();
