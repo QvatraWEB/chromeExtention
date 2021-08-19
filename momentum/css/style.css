@@ -1068,6 +1068,16 @@ body.ie ._ibg img {
 }
 */
 
+.footer__content {
+  margin: 20px 20px 20px 0;
+}
+
+.todo__head {
+  font-size: 106.25%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .main__form,
 .main__greetings,
 .bot__form-focus,
@@ -1342,16 +1352,28 @@ body {
   background-color: #fff;
   position: absolute;
   right: 0;
-  bottom: 30px;
+  bottom: 55px;
   height: auto;
   width: 320px;
+}
+
+.todo__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px 0;
 }
 
 .todo__header-head {
   padding: 7px 0 0 10px;
   color: #000;
   font-size: 20px;
-  overflow: hidden;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   text-transform: capitalize;
@@ -1359,8 +1381,6 @@ body {
 }
 
 .todo__content {
-  min-height: 152px;
-  max-height: 152px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1374,6 +1394,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
+  height: auto;
+  width: auto;
 }
 
 .content__todo-btn {
@@ -1384,7 +1407,7 @@ body {
   font-weight: 500;
   border-radius: 50px;
   padding: 7px 27px 8px;
-  margin: 30px 0 0 0;
+  margin: 0 10px 0 0;
 }
 
 .content__todo-input {
@@ -1396,12 +1419,13 @@ body {
 
 .li-todo {
   color: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1421,6 +1445,23 @@ body {
   border-radius: 50%;
   padding: 5px 10px;
   color: #fff;
+}
+
+.bot__toDo-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 10px 0 20px;
+  width: 100%;
 }
 
 .page {

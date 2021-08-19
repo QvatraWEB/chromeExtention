@@ -876,7 +876,9 @@ function footerHandlerTODO() {
   toDoApp.classList.toggle(SHOWING_CN)
   toDoInput.classList.remove(SHOWING_CN)
   toDoBtn.classList.add(SHOWING_CN)
+
 }
+
 
 function clickBtn() {
   toDoBtn.addEventListener('click', clickHandlerTODO)
@@ -1056,12 +1058,15 @@ function chec() {
 
 
 
+
 const formFocus = document.querySelector('.js-form-focus'),
   inputF = formFocus.querySelector('input'),
   liFocus = document.querySelector('.js-focus-li'),
-  askFokus = document.querySelector('.bot__focus')
+  askFokus = document.querySelector('.bot__focus'),
+  html = document.querySelector('html')
 const USER_FOCUS = 'current',
   SHOW_CNFO = 'showing'
+
 
 function saveFocus(text) {
   localStorage.setItem(USER_FOCUS, text)
@@ -1081,7 +1086,7 @@ function showFocus(text) {
   formFocus.classList.remove(SHOW_CNFO)
   formFocus.style.display = ''
   askFokus.classList.add('zad')
-  askFokus.innerText = 'Задания на сегодня:'
+  askFokus.innerText = 'Задача на сегодня:'
   i.classList.add(SHOW_CNFO)
   delChec.classList.add(SHOW_CNFO)
 }
@@ -1089,7 +1094,7 @@ function deleteFocus() {
   localStorage.removeItem(USER_FOCUS)
   loadFocus()
   askFokus.classList.remove('zad')
-  askFokus.innerText = 'На чем вы сосредоточены сегодня?'
+  askFokus.innerText = 'На чем Вы сосредоточены сегодня?'
   delChec.classList.remove(SHOW_CNFO)
   i.classList.remove(SHOW_CNFO)
   liFocus.classList.remove(SHOW_CNFO)
@@ -1118,6 +1123,7 @@ function loadFocus() {
   }
 }
 
+
 function init() {
   const randomNumber = getRandom()
   showImage(randomNumber)
@@ -1133,7 +1139,7 @@ function init() {
   clickToDoFooter.addEventListener('click', footerHandlerTODO)
 }
 
-init();
+init()
 
 //let btn = document.querySelectorAll('button[type="submit"],input[type="submit"]');
 let forms = document.querySelectorAll('form');
