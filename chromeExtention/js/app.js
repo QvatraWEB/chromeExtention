@@ -859,15 +859,9 @@ function loadUsername() {
   }
 }
 /////////////////// Name/
-
   const toDoDate = document.querySelector('.js-toDoDate')
-  let today = new Date();
-  const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const yyyy = today.getFullYear();
-
-  today = `${dd}.${mm}.${yyyy}`;
-  toDoDate.innerText = `${today}`
+  let utc = new Date().toJSON().slice(0,10).replace(/-/g,'.');
+  toDoDate.innerText = `${utc}`
 
 /////////////////// ToDo
 
