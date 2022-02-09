@@ -44,13 +44,15 @@ body {
 .page {
 }
 .content {
+  text-shadow: 1px 1px 2px black;
   color: #fff;
   display: flex;
   flex-direction: column;
 
   align-items: center;
   &__top {
-    @include adaptiv-value("height", 300, 100, 1);
+    //@include adaptiv-value("height", 300, 100, 1);
+    height: 24vh;
     display: flex;
     justify-content: center;
     align-items: center;

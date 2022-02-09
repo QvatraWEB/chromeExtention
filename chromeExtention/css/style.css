@@ -35,27 +35,27 @@
 }
 
 ._icon-dots-three-horizontal:before {
-  content: "";
+  content: "\e901";
 }
 
 ._icon-search:before {
-  content: "";
+  content: "\e986";
 }
 
 ._icon-plus:before {
-  content: "";
+  content: "\ea0a";
 }
 
 ._icon-checkbox-checked:before {
-  content: "";
+  content: "\ea52";
 }
 
 ._icon-checkbox-unchecked:before {
-  content: "";
+  content: "\ea53";
 }
 
 ._icon-google:before {
-  content: "";
+  content: "\e900";
 }
 
 * {
@@ -332,7 +332,7 @@ textarea.input {
   font-size: 16px;
   color: #ffffff;
   letter-spacing: -0.3px;
-  line-height: calc(20 / 16);
+  line-height: 1.25;
   cursor: pointer;
 }
 
@@ -406,7 +406,7 @@ textarea.input {
   font-size: 16px;
   color: #ffffff;
   letter-spacing: -0.3px;
-  line-height: calc(20 / 16);
+  line-height: 1.25;
 }
 
 .options__text:before {
@@ -932,6 +932,10 @@ body.ie ._ibg img {
   background: url("../img/icons/close.svg") 0 0 no-repeat;
 }
 
+.header__content {
+  text-shadow: 1px 1px 2px black;
+}
+
 .header__items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1076,6 +1080,7 @@ body.ie ._ibg img {
   font-size: 106.25%;
   font-weight: 500;
   cursor: pointer;
+  text-shadow: 1px 1px 2px black;
 }
 
 .main__form,
@@ -1136,6 +1141,7 @@ body {
 }
 
 .content {
+  text-shadow: 1px 1px 2px black;
   color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1150,7 +1156,7 @@ body {
 }
 
 .content__top {
-  height: 300px;
+  height: 24vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1490,12 +1496,6 @@ body {
 @media (max-width: 1182px) {
   ._container {
     max-width: 970px;
-  }
-}
-
-@media (max-width: 1170px) {
-  .content__top {
-    height: calc(100px + 200 * ((100vw - 320px) / 850));
   }
 }
 
