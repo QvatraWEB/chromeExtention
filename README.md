@@ -1,3 +1,3 @@
 # chromeExtention
 
-https://matveevyura.github.io/chromeExtention/momentum/
+https://matveevyura.github.io/chromeExtention/chromeExtention/
