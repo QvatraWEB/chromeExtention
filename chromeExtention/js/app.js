@@ -833,13 +833,13 @@ function timeForGreeting() {
   const date = new Date()
   const hour = date.getHours()
   if (hour >= 05 && hour < 12) {
-    return 'Доброе утро'
+    return 'Добрий ранок'
   } if (hour >= 12 && hour < 18) {
-    return 'Добрый день'
+    return 'Добрий день'
   } if (hour >= 18 && hour < 24) {
-    return 'Добрый вечер'
+    return 'Доброго вечора'
   } if (hour >= 00 && hour < 05) {
-    return 'Хорошей ночи'
+    return 'Хорошої ночі'
   }
 }
 
@@ -975,11 +975,12 @@ const COORDS_LS = 'coords',
   API_KEY = '1a0118170d7e56b406ef1df59c20cb93',
   cityContainer = document.querySelector('.js-city'),
   tempContainer = document.querySelector('.js-temp'),
-  locationIcon = document.querySelector('.weather-icon')
+  locationIcon = document.querySelector('.weather-icon'),
+  lang='ru'
 
 
 function getWeather(lat, lng) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric&lang=ru`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric&lang=${lang}`)
     .then(function (response) {
       return response.json()
     })
@@ -991,6 +992,17 @@ function getWeather(lat, lng) {
       tempContainer.innerHTML = `${temperature} &deg;`
       locationIcon.innerHTML = `<img src="img/icons/${icon}.webp"></img>`
     })
+}
+
+function dateTime() {
+  const toDoDate = document.querySelector('.js-toDoDate')
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const yyyy = today.getFullYear();
+
+  today = `${dd}.${mm}.${yyyy}`;
+  toDoDate.innerText = `${today}`
 }
 
 function saveCoords(positionObj) {
@@ -1086,7 +1098,7 @@ function showFocus(text) {
   formFocus.classList.remove(SHOW_CNFO)
   formFocus.style.display = ''
   askFokus.classList.add('zad')
-  askFokus.innerText = 'Задача на сегодня:'
+  askFokus.innerText = 'Сьогоднішня ціль:'
   i.classList.add(SHOW_CNFO)
   delChec.classList.add(SHOW_CNFO)
 }
@@ -1094,7 +1106,7 @@ function deleteFocus() {
   localStorage.removeItem(USER_FOCUS)
   loadFocus()
   askFokus.classList.remove('zad')
-  askFokus.innerText = 'На чем Вы сосредоточены сегодня?'
+  askFokus.innerText = 'Що Ви хочете сьогодні досягти?'
   delChec.classList.remove(SHOW_CNFO)
   i.classList.remove(SHOW_CNFO)
   liFocus.classList.remove(SHOW_CNFO)
@@ -1137,6 +1149,7 @@ function init() {
   del()
   clickBtn()
   clickToDoFooter.addEventListener('click', footerHandlerTODO)
+  dateTime()
 }
 
 init()
