@@ -67,6 +67,16 @@ function loadUsername() {
   }
 }
 /////////////////// Name/
+
+  const toDoDate = document.querySelector('.js-toDoDate')
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const yyyy = today.getFullYear();
+
+  today = `${dd}.${mm}.${yyyy}`;
+  toDoDate.innerText = `${today}`
+
 /////////////////// ToDo
 
 const toDoForm = document.querySelector('.js-toDo'),
@@ -200,17 +210,6 @@ function getWeather(lat, lng) {
       tempContainer.innerHTML = `${temperature} &deg;`
       locationIcon.innerHTML = `<img src="img/icons/${icon}.webp"></img>`
     })
-}
-
-function dateTime() {
-  const toDoDate = document.querySelector('.js-toDoDate')
-  let today = new Date();
-  const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const yyyy = today.getFullYear();
-
-  today = `${dd}.${mm}.${yyyy}`;
-  toDoDate.innerText = `${today}`
 }
 
 function saveCoords(positionObj) {
@@ -357,7 +356,6 @@ function init() {
   del()
   clickBtn()
   clickToDoFooter.addEventListener('click', footerHandlerTODO)
-  dateTime()
 }
 
 init()
