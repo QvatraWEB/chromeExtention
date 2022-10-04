@@ -1,3 +1,3 @@
 # chromeExtention
 
-https://matveevyura.github.io/chromeExtention/chromeExtention/
+https://matveevyura.github.io/chromeExtention/chromeExtention/index.html
