@@ -41,13 +41,13 @@ function timeForGreeting() {
   const date = new Date()
   const hour = date.getHours()
   if (hour >= 05 && hour < 12) {
-    return 'Добрий ранок'
+    return 'Good morning'
   } if (hour >= 12 && hour < 18) {
-    return 'Добрий день'
+    return 'Good day'
   } if (hour >= 18 && hour < 24) {
-    return 'Доброго вечора'
+    return 'Good evening'
   } if (hour >= 00 && hour < 05) {
-    return 'Хорошої ночі'
+    return 'Good night'
   }
 }
 
@@ -67,9 +67,9 @@ function loadUsername() {
   }
 }
 /////////////////// Name/
-  const toDoDate = document.querySelector('.js-toDoDate')
-  let utc = new Date().toJSON().slice(0,10).replace(/-/g,'.');
-  toDoDate.innerText = `${utc}`
+const toDoDate = document.querySelector('.js-toDoDate')
+let utc = new Date().toJSON().slice(0, 10).replace(/-/g, '.');
+toDoDate.innerText = `${utc}`
 
 /////////////////// ToDo
 
@@ -188,7 +188,7 @@ const COORDS_LS = 'coords',
   cityContainer = document.querySelector('.js-city'),
   tempContainer = document.querySelector('.js-temp'),
   locationIcon = document.querySelector('.weather-icon'),
-  lang='ru'
+  lang = 'en'
 
 
 function getWeather(lat, lng) {
@@ -299,7 +299,7 @@ function showFocus(text) {
   formFocus.classList.remove(SHOW_CNFO)
   formFocus.style.display = ''
   askFokus.classList.add('zad')
-  askFokus.innerText = 'Сьогоднішня ціль:'
+  askFokus.innerText = 'Today\'s goal:'
   i.classList.add(SHOW_CNFO)
   delChec.classList.add(SHOW_CNFO)
 }
@@ -307,7 +307,7 @@ function deleteFocus() {
   localStorage.removeItem(USER_FOCUS)
   loadFocus()
   askFokus.classList.remove('zad')
-  askFokus.innerText = 'Що Ви хочете сьогодні досягти?'
+  askFokus.innerText = 'What do you want to achieve today?'
   delChec.classList.remove(SHOW_CNFO)
   i.classList.remove(SHOW_CNFO)
   liFocus.classList.remove(SHOW_CNFO)
